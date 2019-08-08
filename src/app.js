@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-
+ const port = process.env.PORT ||  3000
 const app = express()
 const geocode = require('./utils/geocode.js')
 const forecast =require('./utils/forecast.js')
@@ -71,7 +71,7 @@ res.send({
      res.send('error 404')
  })
 
-app.listen(3000, () =>{
+app.listen(port, () =>{
 
-    console.log('Application is Listened on port 3000')
+    console.log('Application is Listened on port'+port)
 })
